@@ -1,5 +1,5 @@
 # SLO API
-These files contain code to serve as a template for creating SLOs and Services in Google Cloud
+These files contain code to serve as a template for creating SLOs and Services in Google Cloud.
 Make sure the gcloud SDK is installed prior to running these scripts
 [Google Cloud SDK](https://cloud.google.com/sdk)
 
@@ -8,7 +8,7 @@ Make sure the gcloud SDK is installed prior to running these scripts
 export PROJECT_ID=[project-name-here]
 export SERVICE_ID=[service-name-here]
 ```
-## Execute the associated Curl Commands to run the API
+#### Execute the associated Curl Commands to run the API
 ```
 ./slo-functions.sh
 ```
