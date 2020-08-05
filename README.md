@@ -1,4 +1,4 @@
-# SLO API
+# DORA GCP Dashboard and SLO API
 These files contain code to serve as a template for creating SLOs and Services in Google Cloud.
 Make sure the gcloud SDK is installed prior to running these scripts
 [Google Cloud SDK](https://cloud.google.com/sdk)
@@ -21,3 +21,7 @@ under the Create Dashboard text
 ```
 ./slo-functions.sh
 ```
+
+#### Dashboard
+Remember to follow the blog instructions on setting up your custom metrics
+![GitHub Logo](/doradashboard.png)
