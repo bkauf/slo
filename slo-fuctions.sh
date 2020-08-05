@@ -1,6 +1,7 @@
 export PROJECT_ID=[project-name-here]
-export ACCESS_TOKEN=`gcloud auth print-access-token`
 export SERVICE_ID=[service-name-here]
+export ACCESS_TOKEN=`gcloud auth print-access-token`
+
 
 
 #List all services
