@@ -8,6 +8,15 @@ Make sure the gcloud SDK is installed prior to running these scripts
 export PROJECT_ID=[project-name-here]
 export SERVICE_ID=[service-name-here]
 ```
+There is a dashboard json file that you can use the Cloud Operations API to load by removing the comment to the curl command
+under the Create Dashboard text
+
+```
+#Create Dashboard
+#curl -d @dora-dashboard.json -H "Authorization: Bearer $ACCESS_TOKEN" -H 'Content-Type: application/json' -X POST https://monitoring.googleapis.com/v1/projects/${PROJECT_ID}/dashboards
+```
+
+
 #### Execute the associated Curl Commands to run the API
 ```
 ./slo-functions.sh
