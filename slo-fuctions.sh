@@ -1,6 +1,6 @@
-export PROJECT_ID=bkauf-cloud-build
+export PROJECT_ID=[project-name-here]
 export ACCESS_TOKEN=`gcloud auth print-access-token`
-export SERVICE_ID=bristpmhSc-a0ihHE_iF1g
+export SERVICE_ID=[service-name-here]
 
 
 #List all services
