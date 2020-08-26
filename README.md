@@ -25,4 +25,4 @@ under the Create Dashboard text
 
 #### Dashboard
 Remember to follow the blog instructions on setting up your custom metrics
-![GitHub Logo](/doradashboard.png)
+![GitHub Logo](/doradashboard2.png)
