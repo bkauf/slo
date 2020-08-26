@@ -6,6 +6,6 @@ It currently will only work on a public github repo:
 - args[2]; //Commit SHA
 - args[3]; //Time of code commit
 
-It will output entries in stdout like the following after it runs
+It will output entries in stdout like the following after it runs. Leadtime is in minutes
 
-`Commit: 050a3bb4220e115aa963a3c8079c8bbb5b0de305 || Rollback: True || LeadTime: 2989.72`
+`Commit: 050a3bb4220e115aa963a3c8079c8bbb5b0de305 || Rollback: True || LeadTime: 300`
