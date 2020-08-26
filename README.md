@@ -1,6 +1,6 @@
 # DORA GCP Dashboard and SLO API
 These files contain code to serve as a template for creating SLOs and Services in Google Cloud via the API as well as a template to build a DORA
-metrics dashboard in Google Cloud Operations. 
+metrics dashboard in Google Cloud Operations. View the LeadTime directory for the Cloud Builder that generates the nessessary information to the logs.
 Make sure the gcloud SDK is installed prior to running these scripts
 [Google Cloud SDK](https://cloud.google.com/sdk)
 
