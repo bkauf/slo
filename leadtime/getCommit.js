@@ -8,7 +8,6 @@ const commitTime  = args[3];//PR time
 const currentTime = (Date.now()/1000);//convert milliseconds to seconds
 
 var leadtime  = diff_time(commitTime, currentTime);//working 
-console.log(leadtime);
 isRollback(commit,repo,leadtime);//get rollback data then print to log
 
 function diff_time(dt1, dt2) {
