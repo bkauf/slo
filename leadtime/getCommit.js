@@ -38,7 +38,7 @@ function diff_time(dt1, dt2) {
   resp.on('end', () => {
     var gitDataObj2 = JSON.parse(data);
    
-    if (repo === gitDataObj2.sha){//commit matches master
+    if (commit === gitDataObj2.sha){//commit matches master
           console.log("Commit: " +commit+" || Rollback: False || LeadTime: "+leadtime);
     }else{//commit doesn't match latest, must be rollback
          console.log("Commit: " +commit+" || Rollback: True || LeadTime: "+leadtime);
