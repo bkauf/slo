@@ -1,58 +1,24 @@
-
-    {
-      "displayName": "Dora Metrics",
+{
+    "displayName": "Dora Metrics",
       "gridLayout": {
         "columns": "2",
         "widgets": [
           {
-            "title": "Synthetic Testing for Latency",
+            "title": "Deployment Frequency(24 Hour)",
             "xyChart": {
               "dataSets": [
                 {
                   "timeSeriesQuery": {
                     "timeSeriesFilter": {
-                      "filter": "metric.type=\"monitoring.googleapis.com/uptime_check/request_latency\" resource.type=\"uptime_url\"",
+                      "filter": "metric.type=\"logging.googleapis.com/user/DoraMetrics\" resource.type=\"build\"",
                       "aggregation": {
-                        "perSeriesAligner": "ALIGN_MEAN"
+                        "perSeriesAligner": "ALIGN_PERCENTILE_99",
+                        "crossSeriesReducer": "REDUCE_COUNT"
                       },
                       "secondaryAggregation": {}
-                    },
-                    "unitOverride": "ms"
+                    }
                   },
-                  "plotType": "LINE",
-                  "minAlignmentPeriod": "60s"
-                }
-              ],
-              "timeshiftDuration": "0s",
-              "yAxis": {
-                "label": "y1Axis",
-                "scale": "LOG10"
-              },
-              "chartOptions": {
-                "mode": "COLOR"
-              }
-            }
-          },
-          {
-            "title": "HTTP LB Response Error Codes",
-            "xyChart": {
-              "dataSets": [
-                {
-                  "timeSeriesQuery": {
-                    "timeSeriesFilter": {
-                      "filter": "metric.type=\"loadbalancing.googleapis.com/https/request_count\" resource.type=\"https_lb_rule\" metric.label.\"response_code\"!=\"200\" metric.label.\"response_code\"!=\"301\"",
-                      "aggregation": {
-                        "perSeriesAligner": "ALIGN_SUM",
-                        "crossSeriesReducer": "REDUCE_SUM",
-                        "groupByFields": [
-                          "metric.label.\"response_code\""
-                        ]
-                      },
-                      "secondaryAggregation": {}
-                    },
-                    "unitOverride": "1"
-                  },
-                  "plotType": "STACKED_AREA",
+                  "plotType": "STACKED_BAR",
                   "minAlignmentPeriod": "60s"
                 }
               ],
@@ -75,47 +41,14 @@
                     "timeSeriesFilter": {
                       "filter": "metric.type=\"logging.googleapis.com/user/DoraMetrics\" resource.type=\"build\" metric.label.\"Rollback\"!=\"True\"",
                       "aggregation": {
-                        "perSeriesAligner": "ALIGN_DELTA",
-                        "crossSeriesReducer": "REDUCE_MEAN"
+                        "perSeriesAligner": "ALIGN_PERCENTILE_50",
+                        "crossSeriesReducer": "REDUCE_PERCENTILE_50"
                       },
                       "secondaryAggregation": {}
-                    },
-                    "unitOverride": "1"
-                  },
-                  "plotType": "STACKED_AREA",
-                  "minAlignmentPeriod": "60s"
-                }
-              ],
-              "timeshiftDuration": "0s",
-              "yAxis": {
-                "label": "y1Axis",
-                "scale": "LOG10"
-              },
-              "chartOptions": {
-                "mode": "COLOR"
-              }
-            }
-          },
-          {
-            "title": "Deployment Frequency(24 Hour)",
-            "xyChart": {
-              "dataSets": [
-                {
-                  "timeSeriesQuery": {
-                    "timeSeriesFilter": {
-                      "filter": "metric.type=\"logging.googleapis.com/user/DoraMetrics\" resource.type=\"build\"",
-                      "aggregation": {
-                        "perSeriesAligner": "ALIGN_PERCENTILE_99",
-                        "crossSeriesReducer": "REDUCE_COUNT"
-                      },
-                      "secondaryAggregation": {
-                        "crossSeriesReducer": "REDUCE_SUM"
-                      }
-                    },
-                    "unitOverride": "1"
+                    }
                   },
                   "plotType": "STACKED_BAR",
-                  "minAlignmentPeriod": "86400s"
+                  "minAlignmentPeriod": "60s"
                 }
               ],
               "timeshiftDuration": "0s",
@@ -143,11 +76,39 @@
                       "secondaryAggregation": {
                         "crossSeriesReducer": "REDUCE_SUM"
                       }
-                    },
-                    "unitOverride": "1"
+                    }
+                  },
+                  "plotType": "STACKED_AREA",
+                  "minAlignmentPeriod": "86400s"
+                }
+              ],
+              "timeshiftDuration": "0s",
+              "yAxis": {
+                "label": "y1Axis",
+                "scale": "LINEAR"
+              },
+              "chartOptions": {
+                "mode": "COLOR"
+              }
+            }
+          },
+          {
+            "title": "MTTR",
+            "xyChart": {
+              "dataSets": [
+                {
+                  "timeSeriesQuery": {
+                    "timeSeriesFilter": {
+                      "filter": "metric.type=\"logging.googleapis.com/user/TimeToResolve\" resource.type=\"cloud_function\"",
+                      "aggregation": {
+                        "perSeriesAligner": "ALIGN_SUM",
+                        "crossSeriesReducer": "REDUCE_MEAN"
+                      },
+                      "secondaryAggregation": {}
+                    }
                   },
                   "plotType": "STACKED_BAR",
-                  "minAlignmentPeriod": "86400s"
+                  "minAlignmentPeriod": "60s"
                 }
               ],
               "timeshiftDuration": "0s",
@@ -162,4 +123,4 @@
           }
         ]
       }
-    }
+}
